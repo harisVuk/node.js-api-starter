@@ -1,0 +1,59 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "News rest api",
+        "description": "Token: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.MTI.7j2VMlXRjovr1sI23Vn4MRwkxuIC38eX8sv65UBZL1U",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "schemes": [
+      "http"
+    ],
+    "tags": [
+        {
+          "name": "News"
+        }
+    ],
+    "components": {
+      "securitySchemes":{
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    },
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/news": {
+            "get": {
+                "tags": [
+                  "News"
+                ],
+                "security": [{
+                  "bearerAuth": []
+                }],
+                "summary": "Get all news in system",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                      "description": "Unauthorized"
+                    }
+                  }
+                }
+              }
+            }
+        }
+
